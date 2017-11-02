@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.hibernate.Session;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.pkk.utils.commons.PageCondition;
@@ -20,6 +23,7 @@ import com.pkk.utils.commons.PageCondition;
  * @Description: <>
  * @date 11/1 0001 20:00
  */
+@Controller
 public class BaseAction extends ActionSupport implements ServletRequestAware, ServletResponseAware, SessionAware {
 
     public HttpServletRequest  servletRequest;// request对象
@@ -29,7 +33,26 @@ public class BaseAction extends ActionSupport implements ServletRequestAware, Se
     public String              sort;//排序字段
     public String              order;//排序顺序
     public PageCondition       pageCondition;//分页封装类
+    public Map                 session;//session对象
 
+
+    public HttpServletRequest getServletRequest() {
+        return servletRequest;
+    }
+
+    @Override
+    public void setServletRequest(HttpServletRequest servletRequest) {
+        this.servletRequest = servletRequest;
+    }
+
+    public HttpServletResponse getServletResponse() {
+        return servletResponse;
+    }
+
+    @Override
+    public void setServletResponse(HttpServletResponse servletResponse) {
+        this.servletResponse = servletResponse;
+    }
 
     public int getPage() {
         return page;
@@ -63,27 +86,16 @@ public class BaseAction extends ActionSupport implements ServletRequestAware, Se
         this.order = order;
     }
 
-    @Override
-    public void setServletRequest(HttpServletRequest httpServletRequest) {
-
+    public void setPageCondition(PageCondition pageCondition) {
+        this.pageCondition = pageCondition;
     }
 
-    public HttpServletRequest getServletRequest() {
-        return servletRequest;
+    public Map getSession() {
+        return session;
     }
 
-    @Override
-    public void setServletResponse(HttpServletResponse httpServletResponse) {
-
-    }
-
-    @Override
-    public void setSession(Map<String, Object> map) {
-
-    }
-
-    public HttpServletResponse getServletResponse() {
-        return servletResponse;
+    public void setSession(Map session) {
+        this.session = session;
     }
 
 

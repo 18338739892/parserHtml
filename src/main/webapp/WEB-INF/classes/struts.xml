@@ -25,6 +25,7 @@
 
     <!--用户登录 -->
     <include file="config/struts/struts_login.xml"></include>
-
+    <!--用户菜单-->
+    <include file="config/struts/struts_sysmenu.xml"></include>
 
 </struts>
