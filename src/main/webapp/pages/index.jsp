@@ -17,6 +17,6 @@
 
 <br>
 
-<a href=<%=basePath%>"/sysMenuAction!queryMenu.action">点击</a>
+<a href=<%=basePath%>"/userLoginAction!testFail.action">点击</a>
 </body>
 </html>

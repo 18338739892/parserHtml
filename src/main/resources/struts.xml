@@ -21,7 +21,7 @@
               value="org.apache.struts2.spring.StrutsSpringObjectFactory"/>
 
     <!--定义 -->
-    <package name="web-default" namespace="/" extends="struts-default"/>
+    <package name="web-default" namespace="/" extends="struts-default,json-default"/>
 
     <!--用户登录 -->
     <include file="config/struts/struts_login.xml"></include>
