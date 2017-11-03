@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>爱情公寓吧台</title>
+    <title>❤爱情公寓❤</title>
     <jsp:include page="../pages/support/easyui_support.jsp"></jsp:include>
 </head>
 <body style="background-color: #ffffff; text-align: center; margin: 0 auto;">

@@ -3,6 +3,7 @@
 <%
 	String contextPath = request.getContextPath();
 %>
+
 <script type="text/javascript" charset="utf-8">
 	function openTabInMain(title, menuurl, imgurl) {
 		menuurl = '<%=contextPath%>' + "/" + menuurl;
@@ -47,5 +48,5 @@
 				</s:iterator>
 			</div>
 		</s:if>
-	</s:iterator>    
+	</s:iterator>
 </div>

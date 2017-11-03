@@ -35,7 +35,7 @@ public class SysMenuDAO extends BaseDao<SysMenu> {
 //            String sql = "from SysMenu where id in(select menuid from SysRoleDetail where roleid= :roleid ) and parentid=0 and plevel=1 and status=1 order by id";
             String sql = "from SysMenu where id in(1,2,3,20) and parentid=0 and plevel=1 and status=1 order by id";
 
-            return (List<SysMenu>) super.sessionFactory.openSession().createQuery(sql).list();
+            return (List<SysMenu>) super.sessionFactory.getCurrentSession().createQuery(sql).list();
         } catch (RuntimeException re) {
             logger.error("获取父节点菜单出错：", re);
             return null;
@@ -46,7 +46,7 @@ public class SysMenuDAO extends BaseDao<SysMenu> {
         try {
 //            String sql = "from SysMenu where id in(select menuid from SysRoleDetail where roleid= :roleid ) and parentid= :parentid and status=1 order by id ";
             String sql = "from SysMenu where id in(1,2,3,20) and parentid= :parentid and status=1 order by id ";
-            return (List<SysMenu>) super.sessionFactory.openSession().createQuery(sql).setParameter("parentid", parentid).list();
+            return (List<SysMenu>) super.sessionFactory.getCurrentSession().createQuery(sql).setParameter("parentid", parentid).list();
 
         } catch (RuntimeException re) {
             logger.error("获取子节点菜单出错：", re);

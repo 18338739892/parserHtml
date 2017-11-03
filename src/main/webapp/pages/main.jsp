@@ -6,7 +6,7 @@ String contextPath = request.getContextPath();
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>金蜜蜂聚合缴费管理平台</title>
+		<title>❤爱情公寓❤</title>
 		<jsp:include page="../pages/support/easyui_support.jsp"></jsp:include>
 		<script type="text/javascript">
 			var mainMenu;
