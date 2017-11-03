@@ -8,20 +8,21 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import static javafx.beans.binding.Bindings.select;
 
 /**
- * Created by peikunkun on 2017/11/1 0001.
+ * @author peikunkun
+ * @version V1.0
+ * @Title: lov
+ * @Package com.pkk.test.test1
+ * @Description: <>
+ * @date 11/3 0003 13:29
  */
-public class Test1_2 {
+@SuppressWarnings("all")
+public class Test1_3 {
+
 
     public static void main(String[] args) {
 
-        System.out.println("测试");
-
-    }
-
-    public static void main1(String[] args) {
         String url = "http://www.xiuqq.com/index.html";
         Document document = getUrl(url);
 
@@ -45,17 +46,19 @@ public class Test1_2 {
 
             Document info = getUrl(titleHref);
             System.out.println(titleHref);
-            Elements infoeles = info.select("div.w960 center clear div.pleft div.viewbox");
+            Elements infoeles = info.select("div.pleft div.viewbox");
             System.out.println(infoeles.size());
 
             for (int j = 0; j < infoeles.size(); j++) {
 
                 Element ztitle = infoeles.get(j);
-                Element zwenzhang = ztitle.getElementById("gg");
-                String zti = ztitle.text();
-                String zinfo = zwenzhang.text();
+                Elements zinfos = ztitle.select("div.info");
+                Elements zwenzhangs = ztitle.select("div#zt p");
+                String zti = ztitle.select(".title h2").text();
+                String zwenzhang = zwenzhangs.text();
+                String zinfo = zinfos.text();
 
-                System.out.println(zti + "_____" + zinfo);
+                System.out.println(zti + "----" + zinfo + "----" + zwenzhang);
 
 
             }

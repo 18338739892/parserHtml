@@ -45,17 +45,16 @@ public class SysMenuAction extends BaseAction {
 
     public String queryMenu() {
 
+        //XXX 需要在登陆时候进行添加到session中
         SysUser sysUserTest = new SysUser();
         sysUserTest.setId(1);
         sysUserTest.setRoleid(1);
-        Map session1 = super.getSession();
-
-        //super.session.put("sysUserInfo", sysUserTest);
+        super.session.put("sysUserInfo", sysUserTest);
 
         // 从session中获得用户信息，取出角色id
-        //SysUser sysUser = (SysUser) super.session.get("sysUserInfo");
-        if (sysUserTest != null) {
-            Integer roleId = sysUserTest.getRoleid();
+        SysUser sysUser = (SysUser) super.session.get("sysUserInfo");
+        if (sysUser != null) {
+            Integer roleId = sysUser.getRoleid();
             // 根据角色id获得菜单
             try {
                 sysMenus = this.sysMenuService.getMenuList(roleId);
