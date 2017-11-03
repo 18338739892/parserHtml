@@ -1,10 +1,10 @@
-package com.pkk.constant;
+package com.pkk.utils.constant;
 
 /**
  * @author peikunkun
  * @version V1.0
  * @Title: love
- * @Package com.pkk.constant
+ * @Package com.pkk.utils.constant
  * @Description: <系统常量级>
  * @date 11/2 0002 11:42
  */
