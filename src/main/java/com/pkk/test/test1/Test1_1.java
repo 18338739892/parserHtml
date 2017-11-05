@@ -25,7 +25,7 @@ public class Test1_1 {
     public static void main(String[] args) {
         InetAddress ia = null;
         try {
-            ia = ia.getLocalHost();
+            ia = InetAddress.getLocalHost();
             String localname = ia.getHostName();
             String localip = ia.getHostAddress();
             System.out.println("本机名称是：" + localname);
