@@ -13,7 +13,7 @@ public class ReflexTest1_2 {
     public static void main(String[] args) {
 
         try {
-            Class ReflexTest = Class.forName("com.pkk.test.reflextest.ReflexTest1_1");
+            Class ReflexTest = Class.forName("com.pkk.test.reflextest.ReflexTest");
 
             logger.info("继承的类:"+ReflexTest.getSuperclass());
             logger.info("实现的类:"+ReflexTest.getInterfaces());
