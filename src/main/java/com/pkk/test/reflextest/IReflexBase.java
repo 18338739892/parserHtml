@@ -7,6 +7,7 @@ public interface IReflexBase {
 
     String superStr = "父类的成员变量";
 
-    public void superShow();
+    public void publicInterMethod();
+
 
 }

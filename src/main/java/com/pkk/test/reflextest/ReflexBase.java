@@ -6,7 +6,7 @@ package com.pkk.test.reflextest;
 public class ReflexBase implements IReflexBase {
 
     @Override
-    public void superShow() {
+    public void publicInterMethod() {
         System.out.println("父类的实现子类的重写");
     }
 
