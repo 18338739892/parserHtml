@@ -5,7 +5,7 @@ package com.pkk.test.reflextest;
  */
 public class ReflexTest extends ReflexBase {
 
-    private Integer id;
+    public  Integer id;
     private String  name;
     private String  password;
 
@@ -14,11 +14,13 @@ public class ReflexTest extends ReflexBase {
         return "success";
     }
 
-    private ReflexTest() {
+    public ReflexTest() {
     }
 
 
     public ReflexTest(Integer id) {
+
+        System.out.println("构造方法1");
         this.id = id;
     }
 
@@ -26,7 +28,23 @@ public class ReflexTest extends ReflexBase {
         this.id = id;
         this.name = name;
         this.password = password;
+        System.out.println(id + "-" + "-" + name + "-" + password);
+        System.out.println("构造方法3");
     }
+
+    public ReflexTest(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+        System.out.println(id + "-" + "-" + name);
+        System.out.println("构造方法2");
+    }
+
+
+    public String testMethod(Integer id, String name) {
+        System.out.println("自定义方法调用成功");
+        return "SUCCESS";
+    }
+
 
     public Integer getId() {
         return id;
